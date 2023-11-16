@@ -7,7 +7,7 @@ class Base(DeclarativeBase):
     pass
 
 class Songs(Base):
-    __tablename__ = "songs"
+    __tablename__ = "Songs"
 
     id: Mapped[int] = mapped_column(primary_key = True, index = True, autoincrement="True")
     title: Mapped[str] = Column(String, default="title")

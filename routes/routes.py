@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from fastapi import APIRouter, Depends, HTTPException, status
 import schemas
 import crud
-from session import SessionLocal
+from database import SessionLocal
 
 router = APIRouter(
     prefix="/fast-fm"
