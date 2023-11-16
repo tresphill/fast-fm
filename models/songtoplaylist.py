@@ -6,12 +6,12 @@ from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Text, Table
 class Base(DeclarativeBase):
     pass
 
-class Playlist(Base):
-    __tablename__ = "Playlists"
+class SongToPlaylist(Base):
+    __tablename__ = "SongToPlaylist"
 
     id: Mapped[int] = mapped_column(primary_key = True, index = True, autoincrement="True")
-    name: Mapped[str] = Column(String, default="name")
-    user_id: Mapped[str] = Column(String, default="user id")
+    playlist_id: Mapped[str] = Column(String, default="playlist id")
+    song_id: Mapped[str] = Column(String, default="song id")
 
     def __repr__(self) -> str:
-        return f"Playlist(id={self.id!r}, name={self.name!r}, user_id={self.user_id!r})"
+        return f"SongToPlaylist(id={self.id!r}, playlist_id={self.playlist_id!r}, song_id={self.song_id!r})"
