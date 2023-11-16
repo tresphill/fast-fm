@@ -7,6 +7,7 @@ from schemas.song_schema import SongsSchema
 from schemas.album_schema import AlbumsSchema
 from schemas.artist_schema import ArtistsSchema
 from schemas.playlist_schema import PlaylistSchema
+from schemas.user_schema import UserSchema
 
 router = APIRouter(
     prefix="/fast-fm"
@@ -37,4 +38,9 @@ def get_items(db: Session = Depends(get_db)):
 @router.get("/all", response_model=List[PlaylistSchema])
 def get_items(db: Session = Depends(get_db)):
     items = crud.get_playlist_items(db)
+    return items
+
+@router.get("/all", response_model=List[UserSchema])
+def get_items(db: Session = Depends(get_db)):
+    items = crud.get_user_items(db)
     return items

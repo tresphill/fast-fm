@@ -21,3 +21,9 @@ def get_playlist_items(db: Session):
         db.query(Playlists).all()
     )
     return Playlists
+
+def get_user_items(db: Session):
+    user_query = (
+        db.query(User).all()
+    )
+    return User
