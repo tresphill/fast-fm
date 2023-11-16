@@ -14,5 +14,4 @@ class User(Base):
     email: Mapped[str] = Column(String, default="email")
     password: Mapped[int] = Column(Integer, default="password")
 
-    def __repr__(self) -> str:
-        return f"User(id={self.id!r}, username={self.username!r}, email={self.email!r}, password={self.password!r})"
+   

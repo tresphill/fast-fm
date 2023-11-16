@@ -13,5 +13,4 @@ class Artists(Base):
     name: Mapped[str] = Column(String, default="name")
     genre_id: Mapped[str] = Column(String, default="genre id")
 
-    def __repr__(self) -> str:
-        return f"Artists(id={self.id!r}, name={self.name!r}, genre_id={self.artist_id!r})"
+    

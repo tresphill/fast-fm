@@ -13,5 +13,4 @@ class SongToPlaylist(Base):
     playlist_id: Mapped[str] = Column(String, default="playlist id")
     song_id: Mapped[str] = Column(String, default="song id")
 
-    def __repr__(self) -> str:
-        return f"SongToPlaylist(id={self.id!r}, playlist_id={self.playlist_id!r}, song_id={self.song_id!r})"
+    song: Mapped[List["Song"]] = relationship(back_populates="playlist")
