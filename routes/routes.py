@@ -1,7 +1,7 @@
 from typing import List
 from sqlalchemy.orm import Session
 from fastapi import APIRouter, Depends, HTTPException, status
-import schemas
+from schemas.song_schema import SongsSchema
 import crud
 from database import SessionLocal
 
@@ -16,7 +16,7 @@ def get_db():
     finally:
         db.close()
 
-@router.get("/all", response_model=List[schemas.FastFMSchema])
+@router.get("/all", response_model=List[SongsSchema])
 def get_items(db: Session = Depends(get_db)):
     items = crud.get_songs_items(db)
     return items

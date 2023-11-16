@@ -1,6 +1,6 @@
 from typing import Optional
 from pydantic import BaseModel, EmailStr
-from models import Base
+from models.song_model import Base
 
 class Base(BaseModel):
     pass
