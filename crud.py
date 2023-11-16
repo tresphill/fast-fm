@@ -9,3 +9,15 @@ def get_songs_items(db: Session):
         db.query(Songs).all()
     )
     return Songs
+
+def get_albums_items(db: Session):
+    albums_query = (
+        db.query(Albums).all()
+    )
+    return Albums
+
+def get_playlist_items(db: Session):
+    playlists_query = (
+        db.query(Playlists).all()
+    )
+    return Playlists

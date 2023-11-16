@@ -10,8 +10,8 @@ class Albums(Base):
     __tablename__ = "Albums"
 
     id: Mapped[int] = mapped_column(primary_key = True, index = True, autoincrement="True")
-    name: Mapped[str] = Column(String, default="title")
-    artist_id: Mapped[str] = Column(String, default="duration")
+    name: Mapped[str] = Column(String, default="name")
+    artist_id: Mapped[str] = Column(String, default="artist id")
     release_date: Mapped[int] = Column(Integer, default="release date")
 
     def __repr__(self) -> str:
