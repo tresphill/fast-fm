@@ -1,18 +1,18 @@
 from sqlalchemy.orm import Session, aliased, joinedload
-from models import *
-from schemas import *
+from app.models import *
+from app.schemas import *
 from sqlalchemy import and_, or_
-from models.song_model import Songs
+from app.models.song_model import Song
 
-def get_songs_items(db: Session):
+def get_song_items(db: Session):
     song_query = (
-        db.query(Songs).all()
+        db.query(Song).all()
     )
-    return Songs
+    return Song
 
-def get_albums_items(db: Session):
+def get_album_items(db: Session):
     albums_query = (
-        db.query(Albums).all()
+        db.query(Album).all()
     )
     return Albums
 

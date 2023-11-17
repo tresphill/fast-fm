@@ -1,13 +1,10 @@
 from typing import Optional
 from pydantic import BaseModel, EmailStr
-from models.song_model import Base
+from app.models.base import Base
 
-class Base(BaseModel):
-    pass
-
-class SongsSchema(Base):
+class SongSchema(Base):
     id: int
     title: str | None
-    duration: str | None
+    duration: int | None
     release_date: int | None
     album_id: int | None

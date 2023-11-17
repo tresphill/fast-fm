@@ -1,12 +1,9 @@
 from typing import Optional
 from pydantic import BaseModel, EmailStr
-from models.album_model import Base
+ffrom app.models.base import Base
 
-class Base(BaseModel):
-    pass
-
-class AlbumsSchema(Base):
+class AlbumSchema(Base):
     id: int
     name: str | None
-    artist_id: str | None
+    artist_id: int | None
     release_date: int | None
